@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+body{
+    background: url('Images/dashboard.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+main {
+    padding: 20px;
+    text-align: center;
+}
+.hero {
+    background:transparent;
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 90px auto;
+    max-width: 600px;
+    color:#162938;
+    border:1px solid white
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.hero p{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.btn{
+    background-color: #162938;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #555;
+}
+section button a{
+    text-decoration: none;
+    color: white;
+}
+section button a:visited{
+    text-decoration: none;
+    color: white;
+}
+.dash{
+    font-size: 20px;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.search-logo {
+    padding: 5px;
+}
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+}
+.search-button {
+    background-color: #162938;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.search-button:hover {
+    background-color: #555;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:20px 100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:1;
+}
+.logo{
+    font-size:2em;
+    color:#fff;
+    user-select:none;
+}
+.logo:hover{
+    color:black
+}
+.navigation a{
+    position:relative;
+    font-size: 1.1em;
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+    margin-left:40px;
+}
+.navigation a::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:3px;
+    background:#fff;
+    border-radius:5px;
+    left:0;
+    bottom: -6px;
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+.navigation a:hover:after{
+    transform: scaleX(1);
+}
+.navigation .btn-login{
+    width:100px;
+    height:45px;
+    background:transparent;
+    border:2px solid #fff;
+    outline:none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size:1.1em;
+    color:#fff;
+    font-weight:500;
+    margin-left:40px;
+    transition: .3s;
+}
+.navigation .btn-login:hover{
+    background:#fff;
+    color:#162938;
+}
+.navigation a:hover{
+    color:#162938;
+}
+.result {
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 275px;
+    background:transparent;
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 5px auto;
+    max-width: 600px;
+    display: none;
+    }
+.result h3{
+    font-size:30px;
+    color:#162938;
+
+}
+.result .word{
+    display: flex;
+    justify-content: space-between;
+    margin:20px 30px 5px 30px;
+
+}
+.result button{
+    background-color: transparent;
+    color:#162938 ;
+    border:none;
+    outline: none;
+    font-size: 30px;
+    cursor: pointer;  
+}
+.result button:hover{
+    color:#fff;
+}
+.result .details{
+    display: flex;
+    padding-left:34px;
+    gap:10px;
+    color: #7D7C7C;
+    margin: 5px 0 20px 0;
+    font-size: 14px;;
+}
+.meaning{
+    color: #162938;
+    text-align: left;
+    padding-left:34px;
+    
+}
+.example{
+    color: #162938;
+    font-style: italic;
+    border-left:2px solid #162938;
+    padding-left: 15px;
+    margin-top:20px;
+}
+.error{
+    margin-top:80px;
+    text-align: center;
+}

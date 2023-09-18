@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    
+</head>
+<body>
+    <header>
+        <h2 class="logo">Dictionary App</h2>
+        <nav class="navigation">
+            <a href="home.html">Home</a>
+            <a href="#">About</a>
+            <button class="btn-login"><a href="login.html" style="margin-left: 0;">LogIn</a></button>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <span class="close"><a href="home.html" style="color: white;"><ion-icon name="close"></ion-icon></a></span>
+        <div class="form-box login">
+            <h2>Registration Form</h2>
+            <form action="/signupLocation">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="Username" required>
+                    <label for="">Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="Email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input name="Password" type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <div class="register">
+                    <p>Aldredy have an Account?<a href="login.html" class="register-link">Log In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

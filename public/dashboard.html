@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
+</head>
+<body> 
+    <audio src="" id="sound" class="sound"></audio>
+    <header>
+        <h2 class="logo">Dictionary App</h2>
+        <nav class="navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <button class="btn-login"><a href="home.html" style="margin-left: 0;">Log Out</a></button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Word-Voyage Dictionary </h1>
+            <p>Search for definitions, translations, and more!</p>
+            <div class="search-container">
+                <div class="search-logo">
+                </div>
+                <input type="text" id="inp-word" class="search-input" placeholder="Search...">
+                <button id="search-btn" class="search-button">Search</button>
+            </div>
+        </section>
+        <div class="result" id="result">
+            <div class="word">
+                <h3>Sample</h3>
+                <button><ion-icon name="volume-medium"></ion-icon></button>
+            </div>
+            <div class="details">
+                <p>Pos</p>
+                <p>/sample/</p>
+            </div>
+            <div class="meaning">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, obcaecati!
+                </p>
+                <p class="example">Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        const url="https://api.dictionaryapi.dev/api/v2/entries/en/";
+        const result=document.getElementById("result");
+        const sound=document.getElementById("sound");
+        const btn=document.getElementById("search-btn");
+
+        btn.addEventListener("click",()=>{
+            let inputWord=document.getElementById("inp-word").value;
+            fetch(`${url}${inputWord}`)
+            .then((response)=>response.json()).then((data)=>{
+                result.innerHTML=`<div class="word">
+                <h3>${inputWord}</h3>
+                <button onclick="playSound()"><ion-icon name="volume-medium"></ion-icon></button>
+            </div>
+            <div class="details">
+                <p>${data[0].meanings[0].partOfSpeech}</p>
+                <p>/${data[0].phonetic}/</p>
+            </div>
+            <div class="meaning">
+                <p>
+                    ${data[0].meanings[0].definitions[0].definition}
+                </p>
+                <p class="example">
+                     ${data[0].meanings[0].definitions[2].example || "No Example available"}   
+                </p>
+            </div>`;
+            result.style.display = "block";
+            sound.setAttribute("src",data[0].phonetics[0].audio);
+            })
+            .catch(()=>{
+                result.innerHTML=`<h3 class="error">Couldn't find the word</h3>`
+            })
+        });
+
+        function playSound(){
+            sound.play(); 
+        }
+    </script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
