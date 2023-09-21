@@ -35,5 +35,5 @@ app.get('/loginLocation',function(req,res){
     })
 });
 app.listen(3000,function(){
-    console.log("Server Started");
+    console.log("Server Started listening....");
 })
