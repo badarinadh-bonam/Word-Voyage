@@ -13,17 +13,21 @@
         <nav class="navigation">
             <a href="home.html">Home</a>
             <a href="#">About</a>
-            <button class="btn-login"><a href="signup.html" style="margin-left: 0;">Signup</a></button>
+            <button class="btn-login"><a href="login.html" style="margin-left: 0;">LogIn</a></button>
         </nav>
     </header>
-    <div class="wrapper">
-        <span class="close"><a style="color: white;" href="home.html"><ion-icon name="close"></ion-icon></a></span>
+    <div class="wrapper">   
         <div class="form-box login">
-            <h2>LogIn</h2>
-            <form action="/loginLocation" method="POST">
+            <h2>Registration Form</h2>
+            <form action="/signupLocation" method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="Username" required>
+                    <label for="">Username</label>
+                </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input name="Email" type="email" required>
+                    <input type="email" name="Email" required>
                     <label for="">Email</label>
                 </div>
                 <div class="input-box">
@@ -31,16 +35,17 @@
                     <input name="Password" type="password" required>
                     <label for="">Password</label>
                 </div>
-                <button type="submit" class="btn">Login</button>
-                <div class="register">
-                    <p>Don't have an account?<a href="signup.html" class="register-link">Register </a></p>
+                <button type="submit" class="btn">Sign Up</button>
+                <div class="message" id="message" style="display:block;">
+                    <p>Seems like you've aldredy Registered!!</p>
+                    <p style="display: inline-block;">Click here to</p>
+                    <button class="lgn-btn"><a href="login.html" class="register-link">Log In</a></button>
+                    
                 </div>
             </form>
         </div>
-    </div>
-
-
-
+    </div>        
+    <script src="server.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
